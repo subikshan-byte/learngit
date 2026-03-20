@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+
+<h2>Upload Image</h2>
+
+<form method="POST" action="http://localhost:8080/api/images/upload" enctype="multipart/form-data">
+    
+    <input type="file" name="file" required />
+    <br><br>
+    
+    <button type="submit">Upload</button>
+
+</form>
+
+</body>
+<script>
+function uploadImage() {
+    const file = document.getElementById("fileInput").files[0];
+
+    if (!file) {
+        alert("Select a file!");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    fetch("http://localhost:8080/api/images/upload", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("HTTP error " + response.status);
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log("Success:", data);
+        alert("Upload success");
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Upload failed: " + error.message);
+    });
+}
+</script>
+</html>

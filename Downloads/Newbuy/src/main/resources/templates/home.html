@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Textile Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Poppins;
+    background:#000;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Store */
+.storefront{
+    width:1000px;
+    height:550px;
+    background-image:url("photo-1441986300917-64674bd600d8.avif");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    position:relative;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 25px 70px rgba(0,0,0,0.8);
+    transition:transform 2s ease;
+}
+/* Zoom animation */
+
+.zoom-in{
+    transform:scale(1.4);
+}
+
+/* search */
+
+.search{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.search input{
+    width:350px;
+    padding:10px;
+    border-radius:25px;
+    border:none;
+}
+
+/* name board */
+
+.nameboard{
+    position:absolute;
+    top:70px;
+    width:100%;
+    text-align:center;
+    font-size:32px;
+    color:white;
+    font-weight:700;
+    text-shadow:0 0 10px black;
+}
+
+/* door container */
+
+.door-container{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+    width:300px;
+    height:420px;
+    display:flex;
+}
+
+/* door */
+
+.door{
+    width:50%;
+    height:100%;
+    background:rgba(100,100,100,0.7);
+    border:2px solid #222;
+    transition:1s;
+    backdrop-filter:blur(2px);
+}
+
+/* left door */
+
+.left{
+    transform-origin:left;
+}
+
+/* right door */
+
+.right{
+    transform-origin:right;
+}
+
+/* open doors */
+
+.open-left{
+    transform:rotateY(-110deg);
+}
+
+.open-right{
+    transform:rotateY(110deg);
+}
+
+/* handles */
+
+.handle{
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:gold;
+    border-radius:50%;
+    top:50%;
+}
+
+.left .handle{
+    right:10px;
+}
+
+.right .handle{
+    left:10px;
+}
+
+/* enter text */
+
+.enter{
+    position:absolute;
+    bottom:15px;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="storefront" id="store">
+
+    <div class="search">
+        <input type="text" placeholder="Search clothes...">
+    </div>
+
+    <div class="nameboard">
+        ZAP WAVES TEXTILE STORE
+    </div>
+
+    <div class="door-container" onclick="enterStore()">
+
+        <div class="door left" id="leftDoor">
+            <div class="handle"></div>
+        </div>
+
+        <div class="door right" id="rightDoor">
+            <div class="handle"></div>
+        </div>
+
+    </div>
+
+    <div class="enter">Click Door To Enter Store</div>
+
+</div>
+
+<script>
+
+function enterStore(){
+
+document.getElementById("leftDoor").classList.add("open-left");
+document.getElementById("rightDoor").classList.add("open-right");
+
+/* camera zoom */
+
+setTimeout(()=>{
+    document.getElementById("store").classList.add("zoom-in");
+},500);
+
+/* go inside */
+
+setTimeout(()=>{
+    window.location.href="store";
+},2000);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUXE - Shop</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-strip">
+  Free shipping on orders over $100 | Use code <b>LUXE20</b> for 20% off
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="logo"><span class="logo-icon">🛍</span> LUXE</div>
+
+  <nav class="nav-links">
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/category}">Categories</a>
+    <a th:href="@{/new-arrivals}">New Arrivals</a>
+    <a th:href="@{/sale}">Sale</a>
+    <a th:href="@{/about}">About</a>
+  </nav>
+
+  <div class="nav-icons">
+    🔍 👤 🛒
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="shop-header">
+  <h1>Shop Collection</h1>
+  <p>Discover premium fashion curated for modern lifestyle.</p>
+</section>
+
+<!-- SHOP CONTAINER -->
+<div class="shop-container">
+
+
+
+  <!-- PRODUCT GRID -->
+  <section class="shop-products">
+
+    <div class="shop-card">
+      <span class="badge">SALE</span>
+      <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <h4>Classic Leather Jacket</h4>
+      <div class="rating">★★★★☆</div>
+      <p class="price">$129</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="shop-card">
+      <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <h4>Modern Sneakers</h4>
+      <div class="rating">★★★★★</div>
+      <p class="price">$89</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="shop-card">
+      <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <h4>Modern Sneakers</h4>
+      <div class="rating">★★★★★</div>
+      <p class="price">$89</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="shop-card">
+      <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <h4>Modern Sneakers</h4>
+      <div class="rating">★★★★★</div>
+      <p class="price">$89</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="shop-card">
+      <span class="badge">NEW</span>
+      <img src="https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <h4>Luxury Handbag</h4>
+      <div class="rating">★★★★☆</div>
+      <p class="price">$199</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="shop-card">
+      <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <h4>Stylish Sunglasses</h4>
+      <div class="rating">★★★★★</div>
+      <p class="price">$59</p>
+      <button>Add to Cart</button>
+    </div>
+
+  </section>
+</div>
+
+<!-- PAGINATION -->
+<div class="pagination">
+  <span>1</span>
+  <span>2</span>
+  <span>3</span>
+  <span>Next →</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 LUXE. Designed by Zap Waves.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
